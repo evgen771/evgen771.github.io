@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 
-Sitemap: https://evgen243.github.io/sitemap.xml
+Sitemap: https://evgen771.github.io/sitemap.xml
 
 
 
