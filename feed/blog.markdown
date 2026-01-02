@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Blog
+title: Блог
 feed-type: blog
 permalink: /feed/blog
 ---
