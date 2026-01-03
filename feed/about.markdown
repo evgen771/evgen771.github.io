@@ -14,14 +14,17 @@ img {
     text-align: center;
     border-radius: 28px;
     box-shadow: 4px 4px 14px black;
-}   
+}
+p {
+    text-align: center;
+} 
 </style>
 
 <a href="/assets/images/I.jpg" target="_blank">
     <img src="/assets/images/I.jpg" alt="I'm">
 </a>
 
-Родился 22.01.1962г. На Южном Урале, г.Челябинск.
+<p>Родился 22.01.1962г. На Южном Урале, г.Челябинск.
 
 Пенсионер.
 
@@ -33,6 +36,6 @@ img {
 
 Из наших, Российских: УльяновскBSD, Calculate.
 
-Свободное ПО.
+Свободное ПО.</p>
 
 
