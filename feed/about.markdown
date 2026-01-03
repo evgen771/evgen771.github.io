@@ -5,6 +5,17 @@ feed-type: about
 permalink: /feed/about
 ---
 
+<style>
+body {
+   	   background: ##f1f1f1;
+}
+img {
+    text-align: center;
+    border-radius: 28px;
+    box-shadow: 4px 4px 14px black;
+}   
+</style>
+
 <a href="/assets/images/I.jpg" target="_blank">
     <img src="/assets/images/I.jpg" alt="I'm">
 </a>
