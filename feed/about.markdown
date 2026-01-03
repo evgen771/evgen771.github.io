@@ -8,6 +8,7 @@ permalink: /feed/about
 <style>
 body {
    	   background: ##f1f1f1;
+   	   text-align: center;
 }
 img {
     text-align: center;
