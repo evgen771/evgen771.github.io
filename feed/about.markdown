@@ -1,6 +1,6 @@
 ---
 layout: page
 title: О себе
-feed-type: s_about
+feed-type: about
 permalink: /feed/about
 ---
