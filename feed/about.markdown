@@ -14,6 +14,8 @@ img {
     text-align: center;
     border-radius: 28px;
     box-shadow: 4px 4px 14px black;
+    width: 60%;
+    height: auto;
 }
 p {
     text-align: center;
