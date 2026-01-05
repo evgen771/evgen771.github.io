@@ -44,7 +44,9 @@ reboot
 ```
 #### Plasma 6 без менеджера входа(DM) sddm
 
->no root   
+>no root
+
+  
 ```sh
 - $ ee .xinitrc
 
