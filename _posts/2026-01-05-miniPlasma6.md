@@ -16,7 +16,7 @@ categories: podcast
 
 [handbook_x11_ru](https://docs.freebsd.org/ru/books/handbook/x11/)
 
-В HandBook все расписано, разложено 'по полочкам'.
+В HandBook все расписано, разложено <по полочкам>.
 
 #### Установка минимальной Plasma6 с менеджером входа(DM) sddm
 
@@ -43,16 +43,20 @@ Esc --> a --> a
 reboot
 ```
 #### Plasma 6 без менеджера входа(DM) sddm
-
+```sh
 >no root   
 
 - $ ee .xinitrc
 
 - exec dbus-launch --exit-wich-x11 ck-launch-session startplasma-x11
 
-- Esc --> a --> a
+- Esc
+
+- a
+
+- a
 
 - reboot
 
 - startx
-
+```
