@@ -43,9 +43,9 @@ Esc --> a --> a
 reboot
 ```
 #### Plasma 6 без менеджера входа(DM) sddm
-```sh
->no root   
 
+>no root   
+```sh
 - $ ee .xinitrc
 
 - exec dbus-launch --exit-wich-x11 ck-launch-session startplasma-x11
