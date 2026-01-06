@@ -1,24 +1,51 @@
-Выберите видеокарту при установке FreeBSD. 
-Есть следующие варианты: 'Intel','AMD', 'AMD-Legacy', 'Nvidia', 'Virtualbox', and 'VMWare':
-Intel
+Выберите видеокарту при установке FreeBSD
+
+Есть следующие варианты: `Intel`,`AMD`, `AMD-Legacy`, `Nvidia`, `Virtualbox`, `VMWare`:
+
+#### Intel
+
+```sh
 - pkg install drm-kmod
 - sysrc kld_list+=i915kms
-AMD
+```
+
+#### AMD
+
+```sh
 - pkg install drm-kmod
 - sysrc kld_list+=amdgpu
-AMD-Legacy
+```
+
+#### AMD-Legacy
+
+```sh
 - pkg install drm-kmod
 - sysrc kld_list+=radeonkms
-Nvidia
+```
+
+#### Nvidia
+
 Последнюю версию драйвера NVIDIA® Graphics можно установить, выполнив следующую команду:
+
+```sh
 - pkg install nvidia-drm-kmod
 - sysrc kld_list+=nvidia-drm
-(Дополнительно смотреть в документации:https://docs.freebsd.org/ru/books/handbook/x11/#x-graphic-card-drivers)
-Virtualbox
+```
+
+[Дополнительно смотреть в документации:](https://docs.freebsd.org/ru/books/handbook/x11/#x-graphic-card-drivers)
+
+#### Virtualbox
+
+```sh
 - pkg install -y virtualbox-ose-additions && sysrc vboxguest_enable=\"YES\" && sysrc vboxserviceenable=\"YES\" && whoami"
 - sysrc kld_list+=vboxvideo
-VMWare
+```
+
+#### VMWare
+
+```sh
 - pkg install -y xf86-video-vmware
 - sysrc kld_list+=vmwgfx
+```
 
-https://docs.freebsd.org/ru/books/handbook/x11/#x-graphic-card-drivers
+[Handbook](https://docs.freebsd.org/ru/books/handbook/x11/#x-graphic-card-drivers)
