@@ -31,7 +31,7 @@ github_username:  jekyll
 theme: minima
 plugins:
   - jekyll-feed
-  
+gem: [jekyll-paginate]  
 paginate: 5
 
 # Exclude from processing.
