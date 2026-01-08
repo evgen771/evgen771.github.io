@@ -1,7 +1,7 @@
 ---
 layout: post
 title: doas vs sudo
-categories: prog
+categories: podcast
 ---
 
 На **FreeBSD** утилита **doas** — это рекомендуемый способ выполнения команд с правами суперпользователя, особенно в свежих установках, где `sudo` не установлен по умолчанию.
