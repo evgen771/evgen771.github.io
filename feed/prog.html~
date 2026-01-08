@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Подкасты
+title: Программы
 ---
 
 <head>
@@ -12,7 +12,7 @@ title: Подкасты
 
 
 
-  <h3>Подкаст</h3>
+  <h3>Программы</h3>
 
   <section class="archive_list">
     {% for category in site.categories %}

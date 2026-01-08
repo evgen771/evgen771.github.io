@@ -20,7 +20,7 @@ title: Программы
     <!--<div class="category-name">
       <h3>{{ category | first }}</h3>
     </div>-->
-    {% for post in category.last %}
+    {% for post in prog.categories %}
 
     <div class="post_title">
       <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h3>
