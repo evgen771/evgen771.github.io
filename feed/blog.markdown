@@ -11,11 +11,22 @@ permalink: /feed/blog
 <ul class="post-list">
   {% for post in site.posts %}
     {% if 'blog' in post.categories %}
-      <li>
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        <p class="post-meta">{{ post.date | date: "%d %B %Y! }}</p>
+      <li class="post-item">
+        <!-- Ссылка на пост -->
+        <a href="{{ post.url }}" class="post-title">
+          {{ post.title }}
+        </a>
+        
+        <!-- Дата публикации -->
+        <p class="post-meta">
+          {{ post.date | date: "%d %B %Y! }}
+        </p>
+        
+        <!-- Отрывок (если есть) -->
         {% if post.excerpt %}
-          <p class="post-excerpt">{{ post.excerpt }}</p>
+          <p class="post-excerpt">
+            {{ post.excerpt }}
+          </p>
         {% endif %}
       </li>
     {% endif %}
