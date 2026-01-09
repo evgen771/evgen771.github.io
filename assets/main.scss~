@@ -12,3 +12,7 @@
   background-color: #fff;
 }
 
+/* Подвал обычный */
+.site-footer {
+  position: relative;
+}
