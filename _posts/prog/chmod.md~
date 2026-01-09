@@ -1,0 +1,6 @@
+Установить полные права доступа rwx (Read Write eXecute) для всех ugo (User Group Other) на директорию `/directory`.
+То-же самое можно сделать, используя числовой представление `chmod 777 directory`:
+`# chmod ugo+rwx /directory`
+
+Удалить все права на директорию /directory для группы и остальных:
+`# chmod go-rwx /directory`
