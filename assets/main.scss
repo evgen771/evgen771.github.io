@@ -19,3 +19,9 @@
   background: #fdfdfd;
   z-index: 1000;
 }
+
+/* Компенсация */
+.page-content {
+  padding-top: 60px;    /* высота шапки */
+  padding-bottom: 60px; /* высота подвала */
+}
