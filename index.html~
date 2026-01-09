@@ -9,16 +9,3 @@ layout: home
 <link rel="icon" href="https://evgen771.github.io/favicon.svg" type="image/svg+xml">
 
 </head>
-
-<h3>Посты</h3>
-
-{% for post in paginator.posts %}
-  <article>
-    <h3>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </h3>
-    <p>{{ post.excerpt }}</p>
-  </article>
-{% endfor %}
-
-{% include pagination.html %}
