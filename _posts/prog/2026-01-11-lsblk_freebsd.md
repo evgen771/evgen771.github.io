@@ -1,3 +1,9 @@
+---
+layout: post
+title: lsblk.FreeBSD
+categories: Программы
+---
+
 Команда которая отображает информацию о блочных устройствах Linux(lsblk), FreeBSD(gpart)
 
 #### Linux - lsblk
