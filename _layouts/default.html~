@@ -23,6 +23,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     {%- include footer.html -%}
 
+  <header class="site-header">
+    <!-- Ваш хедер -->
+  </header>
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  
+  <!-- Подключение CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  
+  <!-- Другие мета-теги и скрипты -->
+</head>
+  
+  <main class="site-content">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <!-- Ваш футер -->
+  </footer>
+
   </body>
 
 </html>
