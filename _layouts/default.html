@@ -12,6 +12,59 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<!--search-->
+
+<script src="https://unpkg.com/simple-jekyll-search@1.9.2/dest/simple-jekyll-search.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const input = document.getElementById('search-input')
+  const results = document.getElementById('results-container')
+
+  if (!input || !results) return
+
+  SimpleJekyllSearch({
+    searchInput: input,
+    resultsContainer: results,
+    json: '/search.json',
+    searchResultTemplate: `
+      <li>
+        <a href="{url}">{title}</a>
+      </li>
+    `,
+    noResultsText: 'Ничего не найдено',
+    limit: 10,
+    fuzzy: false
+  })
+})
+</script>
+
+<script>
+document.addEventListener('keydown', function (e) {
+  const active = document.activeElement
+  const isInput =
+    active.tagName === 'INPUT' ||
+    active.tagName === 'TEXTAREA' ||
+    active.isContentEditable
+
+  if (isInput) return
+
+  if (e.key === '/') {
+    e.preventDefault()
+    window.location.href = '/search/'
+  }
+})
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const input = document.getElementById('search-input')
+  if (input) input.focus()
+})
+</script>
+
+<!--endsearch-->
+
   <body>
 
     {%- include header.html -%}
