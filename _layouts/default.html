@@ -16,63 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <script src="https://unpkg.com/simple-jekyll-search@1.9.2/dest/simple-jekyll-search.min.js"></script>
 
-<!--<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const input = document.getElementById('search-input')
-  const results = document.getElementById('results-container')
-
-  if (!input || !results) return
-
-  SimpleJekyllSearch({
-    searchInput: input,
-    resultsContainer: results,
-    json: '/search.json',
-    searchResultTemplate: `
-      <li>
-        <a href="{url}">{title}</a>
-      </li>
-    `,
-    noResultsText: 'Ничего не найдено',
-    limit: 10,
-    fuzzy: false
-  })
-})
-</script>-->
-
-<!--<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const input = document.getElementById('search-input')
-  const results = document.getElementById('results-container')
-
-  if (!input || !results) return
-
-  SimpleJekyllSearch({
-    searchInput: input,
-    resultsContainer: results,
-    json: '/search.json',
-    searchResultTemplate: `
-      <li>
-        <a href="{url}" data-title="{title}">{title}</a>
-      </li>
-    `,
-    noResultsText: 'Ничего не найдено',
-    limit: 10,
-    fuzzy: false
-  })
-
-  input.addEventListener('input', function () {
-    const query = input.value
-
-    setTimeout(() => {
-      document.querySelectorAll('#results-container a').forEach(link => {
-        const title = link.dataset.title
-        link.innerHTML = highlight(title, query)
-      })
-    }, 0)
-  })
-})
-</script>/script>-->
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const input = document.getElementById('search-input')
@@ -122,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 })
 </script>
-
 
 <script>
 document.addEventListener('keydown', function (e) {
