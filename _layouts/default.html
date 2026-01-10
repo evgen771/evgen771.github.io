@@ -116,7 +116,7 @@ function highlight(text, query) {
 }
 </script>
 
-<script>
+<!--<script>
 function normalize(text) {
   return text.toLowerCase().replace(/ё/g, 'е')
 }
@@ -159,6 +159,165 @@ function makeSnippet(content, query, radius = 80) {
 
   return highlight(snippet, query)
 }
+</script>-->
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const params = new URLSearchParams(window.location.search)
+  const query = params.get('q')
+
+  if (!query) return
+
+  const words = query
+    .toLowerCase()
+    .replace(/ё/g, 'е')
+    .split(/\s+/)
+    .filter(w => w.length > 1)
+
+  if (!words.length) return
+
+  const article = document.querySelector('article')
+  if (!article) return
+
+  function walk(node) {
+    if (node.nodeType === 3) {
+      let text = node.nodeValue
+      let replaced = false
+
+      words.forEach(word => {
+        const regex = new RegExp(`(${word})`, 'gi')
+        if (regex.test(text)) {
+          text = text.replace(
+            regex,
+            '<span class="article-highlight">$1</span>'
+          )
+          replaced = true
+        }
+      })
+
+      if (replaced) {
+        const span = document.createElement('span')
+        span.innerHTML = text
+        node.replaceWith(span)
+      }
+    } else if (
+      node.nodeType === 1 &&
+      !['SCRIPT', 'STYLE', 'NOSCRIPT'].includes(node.tagName)
+    ) {
+      Array.from(node.childNodes).forEach(walk)
+    }
+  }
+
+  walk(article)
+
+  // прокрутка к первому совпадению
+  const first = article.querySelector('.article-highlight')
+  if (first) {
+    first.classList.add('current')
+    first.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+})
+</script>
+
+<script>
+function normalize(text) {
+  return text.toLowerCase().replace(/ё/g, 'е')
+}
+
+function highlight(text, query) {
+  if (!query) return text
+
+  const words = normalize(query).split(/\s+/).filter(w => w.length > 1)
+  let result = text
+
+  words.forEach(word => {
+    const regex = new RegExp(`(${word})`, 'gi')
+    result = result.replace(regex, '<span class="search-highlight">$1</span>')
+  })
+
+  return result
+}
+
+function makeSnippet(content, query, radius = 80) {
+  const normContent = normalize(content)
+  const words = normalize(query).split(/\s+/).filter(w => w.length > 1)
+
+  let index = -1
+  for (const word of words) {
+    index = normContent.indexOf(word)
+    if (index !== -1) break
+  }
+
+  if (index === -1) {
+    return content.slice(0, radius * 2) + '…'
+  }
+
+  const start = Math.max(0, index - radius)
+  const end = Math.min(content.length, index + radius)
+
+  let snippet = content.slice(start, end)
+
+  if (start > 0) snippet = '…' + snippet
+  if (end < content.length) snippet += '…'
+
+  return highlight(snippet, query)
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const input = document.getElementById('search-input')
+  const results = document.getElementById('results-container')
+
+  if (!input || !results) return
+
+  fetch('/search.json')
+    .then(r => r.json())
+    .then(data => {
+      SimpleJekyllSearch({
+        searchInput: input,
+        resultsContainer: results,
+        json: data,
+        searchResultTemplate: `
+          <li>
+            <a href="{url}" class="search-result"
+               data-title="{title}"
+               data-content="{content}">
+              <strong class="title">{title}</strong>
+              <div class="search-snippet"></div>
+            </a>
+          </li>
+        `,
+        noResultsText: 'Ничего не найдено',
+        limit: 10,
+        fuzzy: false
+      })
+
+      input.addEventListener('input', function () {
+        const query = input.value.trim()
+
+        setTimeout(() => {
+          document.querySelectorAll('.search-result').forEach(link => {
+            const title = link.dataset.title
+            const content = link.dataset.content
+
+            // 🔹 подсветка заголовка
+            link.querySelector('.title').innerHTML =
+              highlight(title, query)
+
+            // 🔹 сниппет с подсветкой
+            link.querySelector('.search-snippet').innerHTML =
+              makeSnippet(content, query)
+
+            // 🔹 ВАЖНО: передаём запрос в статью
+            const baseUrl = link.getAttribute('href').split('?')[0]
+            link.setAttribute(
+              'href',
+              `${baseUrl}?q=${encodeURIComponent(query)}`
+            )
+          })
+        }, 0)
+      })
+    })
+})
 </script>
 
 <!--endsearch-->
