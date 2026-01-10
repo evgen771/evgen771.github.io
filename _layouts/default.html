@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 </script>-->
 
-<script>
+<!--<script>
 document.addEventListener('DOMContentLoaded', function () {
   const input = document.getElementById('search-input')
   const results = document.getElementById('results-container')
@@ -70,6 +70,56 @@ document.addEventListener('DOMContentLoaded', function () {
       })
     }, 0)
   })
+})
+</script>/script>-->
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const input = document.getElementById('search-input')
+  const results = document.getElementById('results-container')
+
+  if (!input || !results) return
+
+  fetch('/search.json')
+    .then(r => r.json())
+    .then(data => {
+      SimpleJekyllSearch({
+        searchInput: input,
+        resultsContainer: results,
+        json: data,
+        searchResultTemplate: `
+          <li>
+            <a href="{url}" class="search-result"
+               data-title="{title}"
+               data-content="{content}">
+              <strong class="title">{title}</strong>
+              <div class="search-snippet"></div>
+            </a>
+          </li>
+        `,
+        noResultsText: 'Ничего не найдено',
+        limit: 10,
+        fuzzy: false
+      })
+
+      input.addEventListener('input', function () {
+        const query = input.value
+
+        setTimeout(() => {
+          document.querySelectorAll('.search-result').forEach(link => {
+            const title = link.dataset.title
+            const content = link.dataset.content
+            const snippet = link.querySelector('.search-snippet')
+
+            link.querySelector('.title').innerHTML =
+              highlight(title, query)
+
+            snippet.innerHTML =
+              makeSnippet(content, query)
+          })
+        }, 0)
+      })
+    })
 })
 </script>
 
@@ -121,6 +171,51 @@ function highlight(text, query) {
   })
 
   return result
+}
+</script>
+
+<script>
+function normalize(text) {
+  return text.toLowerCase().replace(/ё/g, 'е')
+}
+
+function highlight(text, query) {
+  if (!query) return text
+
+  const words = normalize(query).split(/\s+/).filter(w => w.length > 1)
+  let result = text
+
+  words.forEach(word => {
+    const regex = new RegExp(`(${word})`, 'gi')
+    result = result.replace(regex, '<span class="search-highlight">$1</span>')
+  })
+
+  return result
+}
+
+function makeSnippet(content, query, radius = 80) {
+  const normContent = normalize(content)
+  const normQuery = normalize(query).split(/\s+/).find(w => w.length > 1)
+
+  if (!normQuery) {
+    return content.slice(0, radius * 2) + '…'
+  }
+
+  const index = normContent.indexOf(normQuery)
+
+  if (index === -1) {
+    return content.slice(0, radius * 2) + '…'
+  }
+
+  const start = Math.max(0, index - radius)
+  const end = Math.min(content.length, index + radius)
+
+  let snippet = content.slice(start, end)
+
+  if (start > 0) snippet = '…' + snippet
+  if (end < content.length) snippet += '…'
+
+  return highlight(snippet, query)
 }
 </script>
 
