@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <script src="https://unpkg.com/simple-jekyll-search@1.9.2/dest/simple-jekyll-search.min.js"></script>
 
-<script>
+<!--<script>
 document.addEventListener('DOMContentLoaded', function () {
   const input = document.getElementById('search-input')
   const results = document.getElementById('results-container')
@@ -37,7 +37,42 @@ document.addEventListener('DOMContentLoaded', function () {
     fuzzy: false
   })
 })
+</script>-->
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const input = document.getElementById('search-input')
+  const results = document.getElementById('results-container')
+
+  if (!input || !results) return
+
+  SimpleJekyllSearch({
+    searchInput: input,
+    resultsContainer: results,
+    json: '/search.json',
+    searchResultTemplate: `
+      <li>
+        <a href="{url}" data-title="{title}">{title}</a>
+      </li>
+    `,
+    noResultsText: 'Ничего не найдено',
+    limit: 10,
+    fuzzy: false
+  })
+
+  input.addEventListener('input', function () {
+    const query = input.value
+
+    setTimeout(() => {
+      document.querySelectorAll('#results-container a').forEach(link => {
+        const title = link.dataset.title
+        link.innerHTML = highlight(title, query)
+      })
+    }, 0)
+  })
+})
 </script>
+
 
 <script>
 document.addEventListener('keydown', function (e) {
@@ -62,6 +97,33 @@ document.addEventListener('DOMContentLoaded', function () {
   if (input) input.focus()
 })
 </script>
+
+<script>
+function highlight(text, query) {
+  if (!query) return text
+
+  const normalizedQuery = query
+    .toLowerCase()
+    .replace(/ё/g, 'е')
+    .trim()
+
+  if (!normalizedQuery) return text
+
+  const words = normalizedQuery.split(/\s+/)
+
+  let result = text
+
+  words.forEach(word => {
+    if (word.length < 2) return
+
+    const regex = new RegExp(`(${word})`, 'gi')
+    result = result.replace(regex, '<span class="search-highlight">$1</span>')
+  })
+
+  return result
+}
+</script>
+
 
 <!--endsearch-->
 
