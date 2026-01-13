@@ -1,5 +1,8 @@
-Midnight Commander (mc)
-
+---
+layout: post
+title: Midnight Commander (mc)
+categories: Программы
+---
 
 #### Возможности:
 
