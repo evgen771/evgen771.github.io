@@ -10,12 +10,12 @@ categories: BSD
 
 #### 1. Копирование шрифтов с Windows‑систем
 
-Перенесите файлы шрифтов (обычно находятся в `C:\\Windows\\Fonts` на Windows) на компьютер с FreeBSD. Способы:
+Перенесите файлы шрифтов (обычно находятся в `C:\\Windows\\Fonts` на Windows) на компьютер с FreeBSD. 
+
+Способы:
 
 * через сеть (SMB/CIFS, NFS, SCP);
-
 * с внешнего носителя (USB‑диск);
-
 * иным удобным способом.
 
 Допустим, вы скопировали шрифты в каталог `/tmp/windows-fonts/`.
@@ -27,11 +27,8 @@ categories: BSD
 ```sh
 
 sudo mkdir -p /usr/local/lib/X11/fonts/user
-
 sudo cp /tmp/windows-fonts/\*.ttf /usr/local/lib/X11/fonts/user/
-
 sudo cp /tmp/windows-fonts/\*.TTF /usr/local/lib/X11/fonts/user/  # если есть
-
 sudo cp /tmp/windows-fonts/\*.otf /usr/local/lib/X11/fonts/user/  # если есть
 
 ```
@@ -45,9 +42,7 @@ sudo cp /tmp/windows-fonts/\*.otf /usr/local/lib/X11/fonts/user/  # если е�
 ```sh
 
 cd /usr/local/lib/X11/fonts/user
-
 sudo mkfontscale
-
 sudo mkfontdir
 
 ```
@@ -74,7 +69,7 @@ sudo vi /etc/X11/xorg.conf
 
 ```sh
 
-&nbsp;   FontPath "/usr/local/lib/X11/fonts/user"
+FontPath "/usr/local/lib/X11/fonts/user"
 
 ```
 
@@ -82,7 +77,7 @@ sudo vi /etc/X11/xorg.conf
 
 ```sh
 
-&nbsp;   Load "freetype"
+Load "freetype"
 
 ```
 
@@ -91,20 +86,13 @@ sudo vi /etc/X11/xorg.conf
 ```sh
 
 Section "Files"
-
-&nbsp;   FontPath "/usr/X11R6/lib/X11/fonts/misc"
-
-&nbsp;   FontPath "/usr/X11R6/lib/X11/fonts/TTF"
-
-&nbsp;   FontPath "/usr/local/lib/X11/fonts/user"  # ваша строка
-
+    FontPath "/usr/X11R6/lib/X11/fonts/misc"
+    FontPath "/usr/X11R6/lib/X11/fonts/TTF"
+    FontPath "/usr/local/lib/X11/fonts/user"  # ваша строка
 EndSection
 
-
 Section "Module"
-
-&nbsp;   Load "freetype"
-
+    Load "freetype"
 EndSection
 
 ```
@@ -132,13 +120,9 @@ fc-list | grep -i "шрифт\_из\_windows"
 ```sh
 
 cd /usr/ports/sysutils/fondu
-
 make install clean
-
 cd /usr/local/lib/X11/fonts/user
-
 fondu *.dfont
-
 rm *.dfont  # удаляем исходники после конвертации
 
 ```
