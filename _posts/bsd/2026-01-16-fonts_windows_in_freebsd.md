@@ -105,7 +105,7 @@ fc-list | grep -i arial
 
 ---
 
-*Важные замечания*
+***Важные замечания***
 
 ##### Лицензия
 
@@ -120,7 +120,7 @@ fc-list | grep -i arial
 
 #### Альтернатива (если именно Windows-шрифты)
 
-Свободные аналоги:
+***Свободные аналоги:***
 
 ```sh
 sudo pkg install liberation-fonts-ttf dejavu noto
