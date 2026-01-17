@@ -4,138 +4,132 @@ title:  Как установить шрифты Windows в FreeBSD
 categories: BSD
 ---
 
-Установка шрифтов Windows в FreeBSD выполняется в несколько этапов.
+В FreeBSD шрифты из Windows можно использовать, но их нужно **скопировать и зарегистрировать** в системе. Ниже - самый простой и рабочий способ.
 
-Ниже — пошаговая инструкция
+---
 
-#### 1. Копирование шрифтов с Windows‑систем
+1. Скопировать шрифты из Windows
 
-Перенесите файлы шрифтов (обычно находятся в `C:\\Windows\\Fonts` на Windows) на компьютер с FreeBSD. 
-
-Способы:
-
-* через сеть (SMB/CIFS, NFS, SCP);
-* с внешнего носителя (USB‑диск);
-* иным удобным способом.
-
-Допустим, вы скопировали шрифты в каталог `/tmp/windows-fonts/`.
-
-#### 2. Размещение шрифтов в системе FreeBSD
-
-Создайте каталог для пользовательских шрифтов и скопируйте туда файлы:
-
-```sh
-
-sudo mkdir -p /usr/local/lib/X11/fonts/user
-sudo cp /tmp/windows-fonts/\*.ttf /usr/local/lib/X11/fonts/user/
-sudo cp /tmp/windows-fonts/\*.TTF /usr/local/lib/X11/fonts/user/  # если есть
-sudo cp /tmp/windows-fonts/\*.otf /usr/local/lib/X11/fonts/user/  # если есть
+В Windows шрифты обычно лежат здесь:
 
 ```
-
-> **Примечание:** Xorg поддерживает `.ttf`, `.otf`, `.bdf` и др. Если у вас есть шрифты в формате `.dfont` (из macOS), их нужно конвертировать (см. ниже).
-
-#### 3. Обновление кеша шрифтов и генерация индексов
-
-Перейдите в каталог со шрифтами и сгенерируйте файлы индексов:
-
-```sh
-
-cd /usr/local/lib/X11/fonts/user
-sudo mkfontscale
-sudo mkfontdir
-
+C:\Windows\Fonts
 ```
 
-Обновите кеш шрифтов FreeType:
+Нужные файлы:
 
-```sh
+* `.ttf` (TrueType)
+* `.otf` (OpenType)
+* иногда `.ttc`
 
-sudo fc-cache -fv
+Скопируй их, например, по сети, с флешки или из dual-boot раздела.
 
-```
+---
 
-#### 4. Настройка Xorg (xorg.conf)
+2. Куда класть шрифты в FreeBSD
 
-Откройте файл конфигурации X‑сервера:
-
-```sh
-
-sudo vi /etc/X11/xorg.conf
+#### Вариант A - для всей системы (рекомендуется)
 
 ```
-
-Найдите секцию `Section "Files"` (если её нет - создайте). Добавьте строку:
-
-```sh
-
-FontPath "/usr/local/lib/X11/fonts/user"
-
+/usr/local/share/fonts/windows/
 ```
 
-Также убедитесь, что загружен модуль `freetype` (в секции `Section "Module"`):
+Создаём каталог и копируем шрифты:
 
 ```sh
-
-Load "freetype"
-
+sudo mkdir -p /usr/local/share/fonts/windows
+sudo cp *.ttf *.otf /usr/local/share/fonts/windows/
 ```
 
-#### Пример фрагмента xorg.conf:
+Права:
 
 ```sh
-
-Section "Files"
-    FontPath "/usr/X11R6/lib/X11/fonts/misc"
-    FontPath "/usr/X11R6/lib/X11/fonts/TTF"
-    FontPath "/usr/local/lib/X11/fonts/user"  # ваша строка
-EndSection
-
-Section "Module"
-    Load "freetype"
-EndSection
-
+sudo chmod 644 /usr/local/share/fonts/windows/*
 ```
 
-#### 5. Перезапуск X‑сервера или сессии
+---
 
-Чтобы шрифты стали доступны, перезапустите X‑сервер или выйдите из текущей графической сессии и войдите снова.
+#### Вариант B - только для одного пользователя
 
-#### 6. Проверка установки
-
-Убедитесь, что шрифты видны системе:
-
-**Список шрифтов через `fc-list`:**
+```
+~/.local/share/fonts/
+```
 
 ```sh
-fc-list | grep -i "шрифт\_из\_windows"
+mkdir -p ~/.local/share/fonts
+cp *.ttf *.otf ~/.local/share/fonts/
 ```
 
-* **Проверка в приложениях:** откройте текстовый редактор (например, LibreOffice) или браузер и проверьте, появились ли нужные шрифты в списке.
+---
 
-#### Дополнительно: конвертация .dfont (если нужно)
+3. Обновить кэш шрифтов (ОБЯЗАТЕЛЬНО)
 
-Если у вас есть шрифты `.dfont` (из macOS), установите утилиту `fondu` и конвертируйте:
+В FreeBSD используется **fontconfig**.
+
+Если он не установлен:
 
 ```sh
-
-cd /usr/ports/sysutils/fondu
-make install clean
-cd /usr/local/lib/X11/fonts/user
-fondu *.dfont
-rm *.dfont  # удаляем исходники после конвертации
-
+sudo pkg install fontconfig
 ```
 
-Затем повторите шаги 3 - 5
+Обновляем кэш:
 
-#### Важные замечания
+```sh
+fc-cache -fv
+```
 
-* **Права доступа:** убедитесь, что файлы шрифтов имеют корректные права (`644`) и принадлежат `root`.
+---
 
-* **Перезагрузка:** иногда требуется полная перезагрузка системы, если шрифты не появляются сразу.
+4. Проверка, что шрифты видны
 
-* **Альтернативный путь:** можно использовать порты FreeBSD для установки популярных шрифтов (например, `x11-fonts/webfonts`), но это не даст полный набор Windows‑шрифтов.
+Например, проверим Arial:
 
-После выполнения всех шагов шрифты Windows должны быть доступны во всех графических приложениях FreeBSD.
+```sh
+fc-list | grep -i arial
+```
+
+Если вывод есть - шрифт установлен
+
+---
+
+5. Использование в приложениях
+
+После этого шрифты будут доступны в:
+
+* X11
+* KDE / GNOME / XFCE
+* LibreOffice
+* Firefox / Chromium
+* Wine
+
+Перезапуск приложений может понадобиться.
+
+---
+
+*Важные замечания*
+
+##### Лицензия
+
+Шрифты Windows (Arial, Times New Roman, Calibri и т.д.) **проприетарные**. 
+
+Использовать их можно, если:
+
+* у тебя есть лицензированная копия Windows
+* ты используешь их лично, а не распространяешь
+
+---
+
+#### Альтернатива (если именно Windows-шрифты)
+
+Свободные аналоги:
+
+```sh
+sudo pkg install liberation-fonts-ttf dejavu noto
+```
+
+* Arial → **Liberation Sans**
+* Times New Roman → **Liberation Serif**
+* Calibri → **Carlito**
+
+---
 
