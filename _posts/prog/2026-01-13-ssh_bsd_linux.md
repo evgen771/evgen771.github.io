@@ -32,6 +32,9 @@ categories: Программы
    ```
    sudo service sshd status
    ```
+ <a href="/assets/images/ssh_bsd.jpg" target="_blank">
+    <img src="/assets/images/ssh_bsd.jpg" alt="FreeBSD 15 JWM">
+</a>  
 
 5. **Убедитесь, что порт 22 открыт** (по умолчанию для SSH). Если используется файрвол (`pf` или `ipfw`), разрешите трафик:
 
