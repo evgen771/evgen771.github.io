@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Установка Gentoo
+title:  Установка Gentoo XFCE
 categories: Блог
 ---
 
