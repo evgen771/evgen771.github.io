@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<h2>{{ page.title }}</h2>
+
+{{ content }}
+
+<h2>Последние посты</h2>
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
