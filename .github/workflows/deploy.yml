@@ -1,0 +1,34 @@
+name: Deploy Jekyll Blogs
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Build main blog
+        run: |
+          bundle install
+          bundle exec jekyll build -d _site
+
+      - name: Build blog2
+        run: |
+          cd blog2
+          bundle install
+          bundle exec jekyll build -d ../_site/blog2
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
