@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ImageMagick.Обработка изображений."
+title: ImageMagick.Обработка изображений
 categories: Magick
 ---
 
