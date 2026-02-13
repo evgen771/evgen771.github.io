@@ -39,11 +39,11 @@ www-client/firefox -wayland -wifi -pulseaudio -telemetry -system-png L10N="-be -
 
 `eix firefox` - **найти firefox (приставка bin (firefox-bin), бинарник - флаги не изменяются)**
 
-emerge -a www-client/firefox - установить firefox
+`emerge -a www-client/firefox` - установить firefox
 
-emerge -av firefox — программа выводит всю доступную информацию о пакете, включая USE-флаги, полное имя, размер, категорию и т. д.. 
+`emerge -av firefox`— программа выводит всю доступную информацию о пакете, включая USE-флаги, полное имя, размер, категорию и т. д.. 
 
-#### В Calculate о бинарнике:
+#### В Calculate информация о пакете:
 
 - Красным цветом отмечены активные USE-флаги
 
