@@ -1,7 +1,9 @@
 ---
 layout: post
 title: ImageMagick.Обработка изображений
+date: "2026-02-12"
 categories: Magick
+image: "imagemagick.jpg"
 ---
 
 ImageMagick.Обработка изображений.
