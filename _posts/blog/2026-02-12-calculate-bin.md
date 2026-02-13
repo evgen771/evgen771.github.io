@@ -55,7 +55,11 @@ emerge -av firefox — программа выводит всю доступну
 
 `emerge -c www-client/firefox - удалит firefox`
 
+
+
 ---
+
+
 
 Вопрос - Ответ:
 
