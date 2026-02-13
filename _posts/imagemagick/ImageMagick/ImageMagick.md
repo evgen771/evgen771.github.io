@@ -1,10 +1,7 @@
 ---
 title: "ImageMagick.Обработка изображений."
-date: "2025-06-22"
-categories: [imagemagick]
-page-layout: full
-title-block-banner: false
-toc: true
+date: "2026-02-12"
+categories: Magick
 image: "imagemagick.jpg"
 ---
 
