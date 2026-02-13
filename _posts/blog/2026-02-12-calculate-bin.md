@@ -25,7 +25,7 @@ categories: Блог
 
 `https://devmanual.gentoo.org/eclass-reference/make.conf/index.html`
 
-Флаги прописываются в каталог `/etc/portage/make.conf/имя_программы` (указываются нужные флаги_я считаю так удобнее)
+Флаги прописываются в каталог `/etc/portage/make.conf/имя_программы` (указываются нужные флаги - я считаю так удобнее)
 
 Например:
 
