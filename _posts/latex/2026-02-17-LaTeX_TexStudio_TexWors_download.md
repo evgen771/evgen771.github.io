@@ -1,5 +1,11 @@
+---
+layout: post
+title: LaTeX. LuaTeX — это движок компиляции. Преамбула.
+categories: LaTeX
+---
 
-#### Установка LaTeX in OS(с помощью файлового менеджера - FM):
+
+### Установка LaTeX in OS(с помощью файлового менеджера - FM):
 
 **Arch Linux:** 
 
@@ -15,7 +21,7 @@
 
 - dnf install texlive
  
-#### Если есть проблема с LaTeX + utf8 + русский язык(установить:)
+### Если есть проблема с LaTeX + utf8 + русский язык(установить:)
 
 - texlive-core
 
@@ -27,17 +33,11 @@
 
 **Желательно скачать и установить полную версию на CTAN**
 
-##### Страница загрузки ISO:
 
-- https://ctan.altspu.ru/systems/texlive/Images/
+### Установщик(netinstall), ISO, on DVD:
 
-##### Миннимальный установщик(netinstall):
+- [minimal](https://tug.org/texlive/acquire-netinstall.html)
 
-- https://tug.org/texlive/acquire-netinstall.html
-
-##### Ссылки
-
-- [CTAN](http://www.ctan.org/)
 - [Downloads](https://tug.org/texlive/acquire.html)
 
 LATEX (в среде ASCII пишется LaTeX) — язык разметки и система подготовки документов, 
@@ -62,8 +62,7 @@ LATEX автоматизирует многие аспекты верстки д
   текста на нескольких языках, нумерацию разделов и формул, перекрёстные ссылки, размещение 
   иллюстраций и таблиц на странице, ведение библиографии и др. 
   
-  Кроме базового набора существует 
-  множество пакетов расширения LaTeX. 
+Кроме базового набора существует множество пакетов расширения LaTeX. 
   
   Первая версия была выпущена Лесли Лэмпортом в 1984 году; 
   текущая версия, LaTeX2ε, после создания в 1994 году испытывала некоторый период нестабильности,
@@ -82,26 +81,22 @@ LATEX автоматизирует многие аспекты верстки д
 
 Будучи распространяемым под лицензией LaTeX Project Public License, LaTeX относится к свободному программному обеспечению. 
 
-## Редакторы для LaTeX
+### Редакторы для LaTeX
 
-***LaTeX+TeXstudio***
+**LaTeX+TeXstudio**
 
-(Устанавливается отдельно)
+*Устанавливается отдельно*
 
-![](/Files/image/latex/LaTeX+TeXstudio.jpg)
+**LaTeX+TexWork**
 
-***LaTeX+TexWork***
+*Устанавливается вместе с LaTeX,если установка с DVD*
 
-(Устанавливается вместе с LaTeX,если установка с DVD)
+Также есть **Vs_Code+workshop**
 
-![](/Files/image/latex/TexWork.png)
+*Расширение для VScode,VSCodium*
 
-Также есть ***Vs_Code+workshop***
 
-(Расширение для VScode,VSCodium)
-![](/Files/image/latex/vs_code-LaTeX-workshop.jpg)
-
-https://ru.wikipedia.org/wiki/LaTeX
+[LaTeX](https://ru.wikipedia.org/wiki/LaTeX)
 
 
 
