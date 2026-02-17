@@ -1,6 +1,6 @@
 ---
 layout: post
-title: LaTeX. LuaTeX — это движок компиляции. Преамбула.
+title: LaTeX. Скачать. Установить.
 categories: LaTeX
 ---
 
