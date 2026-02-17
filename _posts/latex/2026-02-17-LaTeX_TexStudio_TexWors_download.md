@@ -1,11 +1,11 @@
 ---
 layout: post
-title: LaTeX. Скачать. Установить.
+title: LaTeX. Редакторы. Скачать. Установить.
 categories: LaTeX
 ---
 
 
-### Установка LaTeX in OS(с помощью файлового менеджера - FM):
+#### Установка LaTeX in OS(с помощью файлового менеджера - FM):
 
 **Arch Linux:** 
 
@@ -21,7 +21,7 @@ categories: LaTeX
 
 - dnf install texlive
  
-### Если есть проблема с LaTeX + utf8 + русский язык(установить:)
+#### Если есть проблема с LaTeX + utf8 + русский язык(установить:)
 
 - texlive-core
 
@@ -34,7 +34,7 @@ categories: LaTeX
 **Желательно скачать и установить полную версию на CTAN**
 
 
-### Установщик(netinstall), ISO, on DVD:
+#### Установщик(netinstall), ISO, on DVD:
 
 - [minimal](https://tug.org/texlive/acquire-netinstall.html)
 
@@ -81,7 +81,7 @@ LATEX автоматизирует многие аспекты верстки д
 
 Будучи распространяемым под лицензией LaTeX Project Public License, LaTeX относится к свободному программному обеспечению. 
 
-### Редакторы для LaTeX
+#### Редакторы для LaTeX
 
 **LaTeX+TeXstudio**
 
