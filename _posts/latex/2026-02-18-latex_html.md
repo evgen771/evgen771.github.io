@@ -1,4 +1,8 @@
-
+---
+layout: post
+title: LaTeX. Вставить код.
+categories: LaTeX
+---
 
 [wiki/LaTeX](https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings)
 
