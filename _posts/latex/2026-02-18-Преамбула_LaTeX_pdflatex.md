@@ -1,3 +1,9 @@
+---
+layout: post
+title: LaTeX. Преамбула LaTeX.
+categories: LaTeX
+---
+
 ### Преамбула LaTeX: что это и зачем нужна
 
 

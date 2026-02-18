@@ -2,27 +2,38 @@
 
 Каждый документ LaTeX имеет определенную структуру, вначале идут настройки отображения, имортирование нужных пакетов, а уже потом сам текст в теле документа. Вот эти строки инициализируют основные параметры:
 
-`\documentclass[a4paper,11pt]{book}   \usepackage{amsmath,amsthm,amssymb}   \usepackage[T1,T2A]{fontenc}   \usepackage[utf8]{inputenc}   \usepackage[english,russian]{babel}`
+```latex
+\documentclass[a4paper,11pt]{book}   
+\usepackage{amsmath,amsthm,amssymb}   
+\usepackage[T1,T2A]{fontenc}   
+\usepackage[utf8]{inputenc}   
+\usepackage[english,russian]{babel}
 
 \title{Моя новая книга}  
 \author{Неизвестный автор}
+```
 
-Каждый открытый блок \begin всегда должен заканчиваться командой \end.
+Каждый открытый блок `\begin` всегда должен заканчиваться командой `\end`.
 
-Строка \maketitle создает титульный лист latex, а следующая строка \tableofcontents создает содержание latex.
+Строка `\maketitle` создает титульный лист `latex`, а следующая строка `\tableofcontents` создает содержание `latex`.
 
+```latex
 \maketitle  
 \tableofcontents
+```
 
 Следующая директива позволяет создать новую главу, которую вы можете назвать так, как вам нравится. После этой инструкции вы можете писать текст главы
 
- \chapter
+```latex
+\chapter
+```
 
 Многие люди хотят добавить список таблиц и изображений в начало книги. Чтобы сделать это просто добавьте такие команды:
 
+```latex
 \listoffigures  
 \listoftables
-
+```
 
 - **\documentclass** - описывает класс документа, статья, книга, отчет и так далее;
 - \begin - указывает на начало тела документа или блока;
@@ -43,12 +54,14 @@
 
 Остаётся оформить фрагменты текста, отчёркнутые слева линейкой. Её такой фрагмент будет выглядеть вот так:
 
-- \begin{document}
-- \flushleft
-- \smallskip
-- \vrule width 3pt \quad\parbox{0.97\linewidth}{\textit{текст}}
-- \smallskip
-- \end{document}
+```latex
+\begin{document}
+\flushleft
+\smallskip
+\vrule width 3pt \quad\parbox{0.97\linewidth}{\textit{текст}}
+\smallskip
+\end{document}
+```
 
 ***Разбираем, что к чему:***
 
@@ -63,29 +76,21 @@
 - \begin{document}
 - \flushleft
 
-## Общий вид
+#### Общий вид
 
+```latex
     \begin{document}
-
     \flushleft
-
     \smallskip
-
     \vrule width 3pt \quad\parbox{0.97\linewidth}{\textit{текст}}
-
     \smallskip
-
     \end{document}
-
+```
 ---
 
-\textbf{жирным} - ctrl+b
-
-\textit{курсивом} - ctrl+i
-
-\underline{подчеркнутый}
-
-~~ ... ~~{зачеркнутый}
-
-\fbox{врамке}
+- \textbf{жирным} - ctrl+b
+- \textit{курсивом} - ctrl+i
+- \underline{подчеркнутый}
+- ~~ ... ~~{зачеркнутый}
+- \fbox{врамке}
 
