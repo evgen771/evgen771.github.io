@@ -1,0 +1,37 @@
+Затем, если вы хотите, чтобы первый раздел статьи начинался с новой страницы, вам следует добавить команду:`\clearpage`
+
+```latex
+\clearpage
+\section{First Section}
+```
+Для того, чтобы страница начиналась там, где находится первый раздел, вы должны поместить каждую страницу, которую вы не хотите нумеровать, и на страницу, с которой вы хотите, чтобы она начинала нумерацию.`\thispagestyle{empty}``\setcounter{page}{1}`
+
+Чтобы подавить номер страницы на первой странице, добавьте его после команды.`\thispagestyle{empty}``\maketitle`
+
+После этого вторая страница документа будет пронумерована под номером «2». Если вы хотите, чтобы эта страница была пронумерована "1", вы можете добавить после команды, и это сбросит номер страницы.`\pagenumbering{arabic}``\clearpage`
+
+Вот полный минимальный пример:
+
+```latex
+\documentclass[notitlepage]{article}
+
+\title{My Report}
+\author{My Name}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+\ldots
+\end{abstract}
+
+\clearpage
+\pagenumbering{arabic} 
+
+\section{First Section}
+\ldots
+
+\end{document}
+```
+
