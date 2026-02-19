@@ -20,9 +20,9 @@ categories: Magick
 
 ### Примеры работы с FotoKilof:
 
-![](/assets/magick/fotokilof_1.png)
+![](/assets/magick/fotokilof_1.jpg)
 
-![](/assets/magick/fotokilof_2.png)
+![](/assets/magick/fotokilof_2.jpg)
 
 ![](/assets/magick/20241204.jpg)
 
