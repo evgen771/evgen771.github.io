@@ -1,3 +1,9 @@
+---
+layout: post
+title: LaTeX. Установка в ALT, BSD, Slackware, Gentoo.
+categories: LaTeX
+---
+
 ### ALT
 
 #### Install the TexLive base
