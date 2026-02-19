@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ImageMagick. convert, mogrify. Очень нужное, повседневное 2.
-categories: Magick.
+categories: Magick
 ---
 
 #### mogrify и convert - утилиты входящие в состав imagemagick.
