@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Извлечь звук из всех видео в папке"
+title: "FFmpeg. Извлечь звук из всех видео в папке"
 categories: FFmpeg
 ---
 
