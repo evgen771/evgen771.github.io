@@ -23,6 +23,6 @@ pass
 apt install kde-plasma-desktop plasma-nm sddm-theme-breeze kwin-addons -y
 ```
 
-#### Перезагрузить систему
+##### Перезагрузить систему
 
 **После этого будет базовая минимальная настройка KDE Plasma для Debian**
