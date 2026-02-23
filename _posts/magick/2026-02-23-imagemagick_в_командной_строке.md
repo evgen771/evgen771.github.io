@@ -1,22 +1,22 @@
 ---
+layout: post
 title: "ImageMagick в командной строке"
-date: "2025-07-01"
-categories: [imagemagick]
-page-layout: full
-title-block-banner: false
-toc: true
-image: "imagemagick_2.jpg"
+categories: Magick
+---
+
 ---
 
 ### Выяснение формата и свойств
 
 Определить (вывести) формат и основные свойства (разрешение, цветовое пространство) файла file.jpg:
+
 ```
 $ identify  file.jpg
 ```
 ---
 
 То же, но включая метаданные EXIF и подобную информацию:
+
 ```
 $ identify -verbose  file.jpg
 ```
@@ -27,12 +27,14 @@ $ identify -verbose  file.jpg
 ---
 
 Вывести изображение file.jpg на текущий дисплей:
+
 ```
 $ display  file.jpg
 ```
 ---
 
 Воспроизвести видеофрагмент, составленный из кадров, хранящихся в файлах file1.jpg и file2.jpg:
+
 ```
 $ animate  file1.jpg file2.jpg
 ```
@@ -49,6 +51,7 @@ $ convert  input.jpg output.png
 ---
 
 … То же, но подавив определение выходного формата по суффиксу имени файла:
+
 ```
 $ convert  input.jpg png:output.any
 ```
