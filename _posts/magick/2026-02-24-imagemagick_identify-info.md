@@ -1,24 +1,24 @@
 ---
-title: "Identify - выводит информацию о файле"
-date: "2025-07-01"
-categories: [imagemagick]
-page-layout: full
-title-block-banner: false
-toc: true
-image: "imagemagick_ identify.jpg"
+layout: post
+title: ImageMagick. Identify - выводит информацию о файле
+categories:  Magick
 ---
 
-### Получить метаданные о файле
+#### Получить метаданные о файле
 
 Краткая информация о файле:
+
 ```
 identify <имя_файла>
 ```
+
 Подробная информация о файле:
+
 ```
 identify -verbose <имя_файла>
 ```
-### Команда identify предоставляет подробную информацию об изображении:
+
+#### Команда identify предоставляет подробную информацию об изображении:
 
 - Формат изображения (например, JPEG, PNG, GIF)
 
@@ -32,12 +32,15 @@ identify -verbose <имя_файла>
 
 - Другие свойства и характеристики изображения
 
-### Использование:
+#### Использование:
+
 ```
 identify image.jpg
 identify -verbose image.jpg
 ```
-### Например, вывод может выглядеть так:
+
+#### Например, вывод может выглядеть так:
+
 ```
 image.jpg JPEG 1920x1080 1920x1080+0+0 8-bit sRGB 1.8MB 0.000u 0:00.000
 ```
