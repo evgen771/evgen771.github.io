@@ -1,7 +1,25 @@
+---
+layout: post
+title: LaTeX. Написание, обозначение символов.
+category: LaTeX
+---
+
+
 ```latex
 Symbol LaTeX
 
 LATEX \LaTeX
+...   Символ многоточия  \ldots 
+\     признак команды  \textbackslash
+#     параметр команды  #
+{     открывающая скобка  {
+}     закрывающая скобка  }
+_     нижний индекс  _
+^     верхний индекс  \textasciicircum
+$     математическая мода  \$
+&     разделение ячеек  \&
+%     комментарий  \%
+~     неразрывный пробел  \textasciitilde
   	\nbsp
 ¡ 	\iexcl
 ¢ 	\cent
