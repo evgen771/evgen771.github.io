@@ -1,7 +1,7 @@
 ---
+layout: post
 title: ImageMagick. Фильтры для изображений.
 categories: Magick
-layout: post
 ---
 
 

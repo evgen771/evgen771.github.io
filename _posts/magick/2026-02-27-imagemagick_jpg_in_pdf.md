@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ImageMagick.Convert image + автоматизация процесса"
+title: "ImageMagick. Convert image + автоматизация процесса"
 categories: Magick
 ---
 
