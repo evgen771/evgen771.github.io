@@ -1,7 +1,7 @@
 ---
+layout: post
 title: ImageMagick. Основные опции ImageMagick для сжатия и ресайза
 categories: Magick
-layout: post
 ---
 
 #### JPG. Основные опции ImageMagick для сжатия и ресайза
