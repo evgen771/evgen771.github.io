@@ -8,13 +8,13 @@ categories:  Magick
 
 Краткая информация о файле:
 
-```
+```bash
 identify <имя_файла>
 ```
 
 Подробная информация о файле:
 
-```
+```bash
 identify -verbose <имя_файла>
 ```
 
@@ -34,13 +34,13 @@ identify -verbose <имя_файла>
 
 #### Использование:
 
-```
+```bash
 identify image.jpg
 identify -verbose image.jpg
 ```
 
 #### Например, вывод может выглядеть так:
 
-```
+```bash
 image.jpg JPEG 1920x1080 1920x1080+0+0 8-bit sRGB 1.8MB 0.000u 0:00.000
 ```
