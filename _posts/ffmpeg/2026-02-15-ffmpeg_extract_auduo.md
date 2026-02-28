@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "FFmpeg. Извлечение аудио из видео"
+title: FFmpeg. Извлечение аудио из видео
 categories: FFmpeg
 ---
 

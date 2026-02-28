@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "FFmpeg. Простая конвертация видео файлов"
+title: FFmpeg. Простая конвертация видео файлов
 categories: FFmpeg
 ---
 
