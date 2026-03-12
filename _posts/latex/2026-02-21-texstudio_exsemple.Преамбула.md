@@ -61,7 +61,7 @@ category: LaTeX
     \pagenumbering{gobble}% Remove page numbers (and reset to 1)
     \clearpage
     \author{}
-    \title{\textbf{Сделано в \LaTeX}\\\textbf{{\normalsize Консольные утилиты в Linux}}\\ {\smallСобрано с "интернета" по нитке...}\\{\normalsize Часть вторая}\\ {\normalsize Мультимедиа.Конвертирование,нарезка,склейка,запись экрана.}}
+    \title{\textbf{Сделано в \LaTeX}\\\textbf{\normalsize Консольные утилиты в Linux}\\ {\smallСобрано с "интернета" по нитке...}\\{\normalsize Часть вторая}\\ {\normalsize Мультимедиа.Конвертирование,нарезка,склейка,запись экрана.}}
     \posttitle{\\[\bigskipamount]\includegraphics[width=6cm]{LaTeX_logo_bird.jpg}\end{center}}
     \date{}
     \maketitle
