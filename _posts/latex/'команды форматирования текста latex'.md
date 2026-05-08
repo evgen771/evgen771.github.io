@@ -37,9 +37,11 @@ category: LaTeX
 
 * По центру:
 
+```latex
 \begin{center}
   Текст в центре
 \end{center}
+```
 
 * По правому краю: `\begin{flushright} ... \end{flushright}`
 * По левому краю: `\begin{flushleft} ... \end{flushleft}`

@@ -16,8 +16,8 @@ category: LaTeX
 
 Вам нужно переключить их на `XeLaTeX`:
 
-* Overleaf: Menu → Compiler → XeLaTeX.
-* TeXstudio: Параметры → Настройка → Сборка → Команда по умолчанию → XeLaTeX.
+* `Overleaf`: Menu → Compiler → XeLaTeX.
+* `TeXstudio`: Параметры → Настройка → Сборка → Команда по умолчанию → XeLaTeX.
 
 ### Шаблон кода (Преамбула)
 
