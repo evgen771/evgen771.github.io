@@ -4,6 +4,14 @@ title: LaTeX. Ручная установка шрифта в LaTeX.
 category: LaTeX
 ---
 
+<h3>Содержание</h3>
+
+- [Windows](#windows)
+- [Linux](#linux)
+- [Основные действия](#основные-действия)
+- [Интеграция с TeX Live](#интеграция-с-tex-live)
+
+
 
 ### Windows
 
