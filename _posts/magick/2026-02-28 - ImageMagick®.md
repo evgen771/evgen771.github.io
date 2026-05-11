@@ -4,6 +4,16 @@ title:  ImageMagick. Возможности программы.
 category: Magick
 ---
 
+<h3>Содержание</h3>
+
+- [ImageMagick](#imagemagick)
+- [Что такое `ImageMagick`?](#что-такое-imagemagick)
+- [Особенности и возможности](#особенности-и-возможности)
+- [Анимация](#анимация)
+
+
+#### ImageMagick
+
 [What is ImageMagick?](https://github.com/ImageMagick/ImageMagick/blob/main/README.md) 
 
 `ImageMagick®` — это бесплатный и открытый программный пакет, используемый для редактирования и обработки цифровых изображений.
