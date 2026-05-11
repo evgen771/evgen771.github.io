@@ -4,7 +4,7 @@ title: Установка рабочего стола(DE) plasma6-plasma в Free
 categories: BSD
 ---
 
-#### Думаю сама установка FreeBSD больших трудностей не вызовет!
+### Думаю сама установка FreeBSD больших трудностей не вызовет!
 
 >Перед установкой узнать свою видеокарту!!!
 >Здесь я делал установку со своей intel !!!
@@ -18,11 +18,11 @@ categories: BSD
 
 В HandBook все расписано, разложено по <полочкам>.
 
-#### Установка минимальной Plasma6 с менеджером входа(DM) sddm
+### Установка минимальной Plasma6 с менеджером входа(DM) sddm
 
 *Установка с моей видеокартой Intel. Все о видеокартах читать в Handbook*
 
-```
+```sh
 login: root
 passwd: *******
 pkg
@@ -42,23 +42,18 @@ net.local.stream.sendspace=65536
 Esc --> a --> a
 reboot
 ```
-#### Plasma 6 без менеджера входа(DM) sddm
+### Plasma 6 без менеджера входа(DM) sddm
 
 >no root
 
   
 ```sh
-- $ ee .xinitrc
-
-- exec dbus-launch --exit-wich-x11 ck-launch-session startplasma-x11
-
-- Esc
-
-- a
-
-- a
-
-- reboot
-
-- startx
+$ ee .xinitrc
+$ exec dbus-launch --exit-wich-x11 ck-launch-session 
+$ startplasma-x11
+$ Esc
+$ a
+$ a
+$ reboot
+$ startx
 ```
