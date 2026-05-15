@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Emacs, KWrite
-categories: Блог
+categories: Программы
 ---
 
 <a href="/assets/images/emacs_vs_kwrite.jpg" target="_blank">
