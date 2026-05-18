@@ -4,8 +4,15 @@ title: LaTeX. Редакторы. Скачать. Установить.
 categories: LaTeX
 ---
 
+<h3>Содержание</h3>
 
-#### Установка LaTeX in OS(с помощью файлового менеджера - FM):
+- [Установка LaTeX in OS(с помощью файлового менеджера - FM):](#установка-latex-in-osс-помощью-файлового-менеджера---fm)
+- [Если есть проблема с LaTeX + utf8 + русский язык(установить:)](#если-есть-проблема-с-latex--utf8--русский-языкустановить)
+- [Установщик(netinstall), ISO, on DVD:](#установщикnetinstall-iso-on-dvd)
+- [Редакторы для LaTeX](#редакторы-для-latex)
+
+
+### Установка LaTeX in OS(с помощью файлового менеджера - FM):
 
 **Arch Linux:** 
 
@@ -18,15 +25,12 @@ categories: LaTeX
 **Fedora:**
 
 - yum install texlive, 
-
 - dnf install texlive
  
-#### Если есть проблема с LaTeX + utf8 + русский язык(установить:)
+### Если есть проблема с LaTeX + utf8 + русский язык(установить:)
 
 - texlive-core
-
 - texlive-bin 
-
 - texlive-langcyrillic - for LaTeX
 
 *Сегодня с главных узлов CTAN ежемесячно скачивается более 6 ТБ информации (и это без учёта 75 сайтов-дублёров по всему миру)*.
@@ -34,10 +38,9 @@ categories: LaTeX
 **Желательно скачать и установить полную версию на CTAN**
 
 
-#### Установщик(netinstall), ISO, on DVD:
+### Установщик(netinstall), ISO, on DVD:
 
 - [minimal](https://tug.org/texlive/acquire-netinstall.html)
-
 - [Downloads](https://tug.org/texlive/acquire.html)
 
 LATEX (в среде ASCII пишется LaTeX) — язык разметки и система подготовки документов, 
@@ -81,7 +84,7 @@ LATEX автоматизирует многие аспекты верстки д
 
 Будучи распространяемым под лицензией LaTeX Project Public License, LaTeX относится к свободному программному обеспечению. 
 
-#### Редакторы для LaTeX
+### Редакторы для LaTeX
 
 **LaTeX+TeXstudio**
 
